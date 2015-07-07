@@ -12,6 +12,7 @@ $CONFIG = File.join($PROJECT_ROOT, 'config')
 end
 
 require 'client'
-# require 'notifier'
+require 'notifier'
+require 'daemon'
 
 Pry.start
