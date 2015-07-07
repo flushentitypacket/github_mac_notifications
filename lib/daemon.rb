@@ -14,8 +14,8 @@ class Daemon
   def run!
     loop do
       begin
-        @last_polled_at = Time.now
         Notifier.new(@source, @endpoint).notify!(since: @last_polled_at)
+        @last_polled_at = Time.now
         @logger.info("Polled at #{@last_polled_at}")
         sleep(@poll_every)
       rescue => e
