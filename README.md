@@ -1,4 +1,4 @@
-# github_mac_notifications
+# github_notifications-mac
 
 A hacked-together Ruby script that polls the GitHub API to check for notifications and displays them in OS X Notification Center.
 
