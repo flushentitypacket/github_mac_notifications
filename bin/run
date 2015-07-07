@@ -13,6 +13,7 @@ end
 
 require 'client'
 require 'notifier'
+require 'daemon'
 
 source = Client.from_yml(File.join($CONFIG, 'config.yml'))
 endpoint = TerminalNotifier
