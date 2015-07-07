@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'irb'
+require 'rubygems'
+require 'bundler'
+Bundler.require(:default)
+
+$PROJECT_ROOT = File.expand_path('../..', __FILE__)
+$LIB = File.join($PROJECT_ROOT, 'lib')
+$CONFIG = File.join($PROJECT_ROOT, 'config')
+[$LIB, $CONFIG].each do |path|
+  $LOAD_PATH.unshift(path)
+end
+
+require 'client'
+
+IRB.start
