@@ -17,4 +17,4 @@ require 'notifier'
 source = Client.from_yml(File.join($CONFIG, 'config.yml'))
 endpoint = TerminalNotifier
 
-Notifier.new(source, endpoint).notify!
+Daemon.new(source, endpoint).run!

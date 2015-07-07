@@ -5,7 +5,7 @@ class Notifier
   end
 
   def notify!(options = {})
-    notifications_since(options[:from]).each do |notification|
+    notifications_since(options[:since]).each do |notification|
       message = notification.subject.title
       title = 'Github'
       subtitle = notification.subject.type
