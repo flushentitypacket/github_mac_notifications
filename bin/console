@@ -12,5 +12,6 @@ $CONFIG = File.join($PROJECT_ROOT, 'config')
 end
 
 require 'client'
+# require 'notifier'
 
-IRB.start
+Pry.start
