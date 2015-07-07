@@ -16,10 +16,10 @@ class Daemon
       begin
         @last_polled_at = Time.now
         Notifier.new(@source, @endpoint).notify!(since: @last_polled_at)
-        @logger.info("[INFO] Polled at #{@last_polled_at}")
+        @logger.info("Polled at #{@last_polled_at}")
         sleep(@poll_every)
       rescue => e
-        @logger.error("[ERROR] #{e.class}: #{e.message}\n#{e.backtrace}")
+        @logger.error("#{e.class}: #{e.message}\n#{e.backtrace}")
       end
     end
   end
