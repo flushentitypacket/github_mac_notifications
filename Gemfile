@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'pry'
-gem 'octokit'
-gem 'terminal-notifier'
+gem 'pry', '~> 0.10'
+gem 'octokit', '~> 4.0'
+gem 'terminal-notifier', '~> 1.6'
