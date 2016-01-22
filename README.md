@@ -19,7 +19,7 @@ The main entry point is through `bin/run`.
 
 You can do something like the following to run this thing in the background:
 ```
-  $ bin/run &> log/log &
+  $ bin/run &
 ```
 
 # FAQ
