@@ -4,10 +4,11 @@ require 'rubygems'
 require 'bundler'
 Bundler.require(:default)
 
-$PROJECT_ROOT = File.expand_path('../..', __FILE__)
-$LIB = File.join($PROJECT_ROOT, 'lib')
-$CONFIG = File.join($PROJECT_ROOT, 'config')
-[$LIB, $CONFIG].each do |path|
+PROJECT_ROOT = File.expand_path('../..', __FILE__)
+LIB = File.join(PROJECT_ROOT, 'lib')
+CONFIG = File.join(PROJECT_ROOT, 'config')
+LOGFILE = File.join(PROJECT_ROOT, 'log', 'github_notifications_daemon.log')
+[LIB, CONFIG].each do |path|
   $LOAD_PATH.unshift(path)
 end
 
@@ -15,7 +16,7 @@ require 'client'
 require 'notifier'
 require 'daemon'
 
-source = Client.from_yml(File.join($CONFIG, 'config.yml'))
+source = Client.from_yml(File.join(CONFIG, 'config.yml'))
 endpoint = TerminalNotifier
 
-Daemon.new(source, endpoint).run!
+Daemon.new(source, endpoint, logger: Logger.new(LOGFILE)).run!
