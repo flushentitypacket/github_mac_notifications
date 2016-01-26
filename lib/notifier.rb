@@ -26,7 +26,7 @@ class Notifier
     uri = URI.parse(api_url)
     # format: "/repos/PROJECT/REPO/pulls/123"
     uri.path = uri.path.split('/').
-      tap { |a| a[4].chomp!('s'); a.slice!(1) }.join('/')
+      tap { |a| a[4].gsub!('pulls', 'pull'); a.slice!(1) }.join('/')
     uri.host = 'github.com'
     uri.to_s
   end
