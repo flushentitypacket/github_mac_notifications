@@ -11,6 +11,8 @@ A hacked-together Ruby script that polls the GitHub API to check for notificatio
 
 Edit your `config.yml` to match your own Github credentials.
 
+`password` can be either an access token or your Github password (as long as 2-factor is disabled).
+
 And that's it!
 
 # Run
