@@ -19,4 +19,5 @@ require 'daemon'
 source = Client.from_yml(File.join(CONFIG, 'config.yml'))
 endpoint = TerminalNotifier
 
+$0 = 'github_notifications-mac'
 Daemon.new(source, endpoint, logger: Logger.new(LOGFILE)).run!
